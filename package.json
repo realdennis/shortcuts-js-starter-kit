@@ -1,0 +1,24 @@
+{
+  "name": "shortcuts-js-starter-kit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "source": "src/index.js",
+  "target": "dist",
+  "scripts": {
+    "transpile": "node ./scripts/build.js",
+    "watch": "nodemon --watch",
+    "server":"http-server ./dist",
+    "dev": "concurrently --kill-others \"npm run watch\" \"npm run server\"",
+    "build": "rimraf ./dist && npm run transpile"
+  },
+  "dependencies": {
+    "@joshfarrant/shortcuts-js": "^0.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "http-server": "^0.12.1",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.0"
+  }
+}
